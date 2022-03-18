@@ -8,6 +8,8 @@ Feature: Login user in mystore, set address and check address
 	And If yes, go to site address manage and there click Add new address
 	And If no, click Add new address on this page
 	When Entered address data to form <alias>, <address>, <city>, <postal-code>, <country>, <phone>.
+	And Click Save button
+
 
 	Examples:
 	  | browser | email                        | passwd     | alias | address | city        | postal-code | country       | phone        |
