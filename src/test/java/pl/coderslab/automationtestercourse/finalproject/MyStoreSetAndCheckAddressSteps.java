@@ -2,8 +2,14 @@ package pl.coderslab.automationtestercourse.finalproject;
 
 import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MyStoreSetAndCheckAddressSteps {
 
@@ -77,4 +83,16 @@ public class MyStoreSetAndCheckAddressSteps {
         msAddAddressPage.clickSave();
     }
 
+    @Then("^Check if the address was added correctly (.*), (.*), (.*), (.*), (.*), (.*).$")
+    public void checkIfTheAddressWasAddedCorrectly(String alias, String address, String city, String postal_code, String country, String phone) {
+        List<WebElement> addressesList =  msAddressPage.getAddressList();
+        String lastAddressString=addressesList.get(addressesList.size()-1).getText();
+        List<String>lastAddressStringList  = new ArrayList<String>(Arrays.asList(lastAddressString.split("\n")));
+        assertEquals(lastAddressStringList.get(0), alias);
+        assertEquals(lastAddressStringList.get(2), address);
+        assertEquals(lastAddressStringList.get(3), city);
+        assertEquals(lastAddressStringList.get(4), postal_code);
+        assertEquals(lastAddressStringList.get(5), country);
+        assertEquals(lastAddressStringList.get(6), phone);
+    }
 }
