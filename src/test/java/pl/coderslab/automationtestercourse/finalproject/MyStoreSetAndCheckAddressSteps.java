@@ -10,6 +10,8 @@ public class MyStoreSetAndCheckAddressSteps {
     private WebDriver driver;
     private MyStoreNavElement msNavElement;
     private MyStoreLoginPage msLoginPage;
+    private MyStoreAccountPage msAccountPage;
+    private MyStoreAddressPage msAddressPage;
 
     @Given("^Page (.*) open in browser (.*)$")
     public void pageOpenInBrowser(String pageUrl, String browser)
@@ -30,5 +32,29 @@ public class MyStoreSetAndCheckAddressSteps {
         this.msLoginPage.setEmail(email);
         this.msLoginPage.setPassword(password);
         this.msLoginPage.clickLoginButton();
+    }
+
+    @And("Check if there is already an address")
+    public void isAnyAddressExist() {
+        this.msAccountPage = new MyStoreAccountPage(this.driver);
+    }
+
+    @And("If yes, go to site address manage and there click Add new address")
+    public void ifYesGoToSiteAddressManage() {
+        if(this.msAccountPage.isAnyAddress())
+        {
+            this.msAccountPage.clickAddressButton();
+            this.msAddressPage = new MyStoreAddressPage(driver);
+            msAddressPage.clickCreateNewAddress();
+        }
+    }
+
+    @And("If no, click Add new address on this page")
+    public void ifNoClickAddToNewAddress() {
+        boolean b = this.msAccountPage.isAnyAddress();
+        if(!b)
+        {
+            msAccountPage.clickAddressButton();
+        }
     }
 }
