@@ -14,6 +14,8 @@ public class MyStoreSetAndCheckAddressSteps {
     private MyStoreAddressPage msAddressPage;
     private MyStoreAddAddressPage msAddAddressPage;
 
+    private boolean isAnyAddress;
+
     @Given("^Page (.*) open in browser (.*)$")
     public void pageOpenInBrowser(String pageUrl, String browser)
     {
@@ -42,18 +44,17 @@ public class MyStoreSetAndCheckAddressSteps {
 
     @And("If yes, go to site address manage and there click Add new address")
     public void ifYesGoToSiteAddressManage() {
-        if(this.msAccountPage.isAnyAddress())
+        this.msAddressPage = new MyStoreAddressPage(driver);
+        if(isAnyAddress=this.msAccountPage.isAnyAddress())
         {
             this.msAccountPage.clickAddressButton();
-            this.msAddressPage = new MyStoreAddressPage(driver);
             msAddressPage.clickCreateNewAddress();
         }
     }
 
     @And("If no, click Add new address on this page")
     public void ifNoClickAddToNewAddress() {
-        boolean b = this.msAccountPage.isAnyAddress();
-        if(!b)
+        if(!isAnyAddress)
         {
             msAccountPage.clickAddressButton();
         }
