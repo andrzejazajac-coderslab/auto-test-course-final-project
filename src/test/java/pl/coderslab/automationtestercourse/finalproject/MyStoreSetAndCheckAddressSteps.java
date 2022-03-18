@@ -70,4 +70,10 @@ public class MyStoreSetAndCheckAddressSteps {
                     .addPhone(phone);
 
     }
+
+    @And("Click Save button")
+    public void clickSaveButton() {
+        msAddAddressPage.clickSave();
+    }
+
 }

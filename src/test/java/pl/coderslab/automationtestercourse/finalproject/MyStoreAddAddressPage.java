@@ -23,6 +23,8 @@ public class MyStoreAddAddressPage extends PageObject{
     private WebElement countrySelect;
     @FindBy(name = "phone")
     private WebElement phoneInput;
+    @FindBy(xpath = "//form/*/button")
+    private WebElement saveButton;
 
 
     public MyStoreAddAddressPage(WebDriver driver) {
@@ -66,8 +68,7 @@ public class MyStoreAddAddressPage extends PageObject{
     }
 
 
-
-
-
-
+    public void clickSave() {
+        saveButton.click();
+    }
 }
