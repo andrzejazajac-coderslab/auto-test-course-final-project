@@ -17,7 +17,7 @@ public class MyStoreSetAndCheckAddressSteps {
     @Given("^Page (.*) open in browser (.*)$")
     public void pageOpenInBrowser(String pageUrl, String browser)
     {
-        driver = TestHelper.beforeEach(driver,browser, Duration.ofSeconds(8));
+        driver = TestHelper.beforeEach(driver,browser, Duration.ofSeconds(3));
         driver.get(pageUrl);
     }
 
