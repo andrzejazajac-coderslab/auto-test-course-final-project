@@ -12,6 +12,7 @@ public class MyStoreSetAndCheckAddressSteps {
     private MyStoreLoginPage msLoginPage;
     private MyStoreAccountPage msAccountPage;
     private MyStoreAddressPage msAddressPage;
+    private MyStoreAddAddressPage msAddAddressPage;
 
     @Given("^Page (.*) open in browser (.*)$")
     public void pageOpenInBrowser(String pageUrl, String browser)
@@ -56,5 +57,17 @@ public class MyStoreSetAndCheckAddressSteps {
         {
             msAccountPage.clickAddressButton();
         }
+    }
+
+    @When("^Entered address data to form (.*), (.*), (.*), (.*), (.*), (.*).$")
+    public void enteredAddressDataToForm(String alias, String address, String city, String postal_code, String country, String phone ) {
+        msAddAddressPage = new MyStoreAddAddressPage(driver);
+        msAddAddressPage.addAlias(alias)
+                    .addAddress(address)
+                    .addPostalCode(postal_code)
+                    .addCity(city)
+                    .addCountry(country)
+                    .addPhone(phone);
+
     }
 }
