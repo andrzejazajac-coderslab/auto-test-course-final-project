@@ -95,4 +95,12 @@ public class MyStoreSteps {
         assertEquals(lastAddressStringList.get(5), country);
         assertEquals(lastAddressStringList.get(6), phone);
     }
+
+    @And("Go to home page")
+    public void goToHomePage() {
+        //TO DO: Get current URL, prepare home page and go to this
+        driver.get("https://mystore-testlab.coderslab.pl");
+    }
+
+
 }
