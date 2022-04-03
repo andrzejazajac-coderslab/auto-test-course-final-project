@@ -4,6 +4,7 @@ Feature: Login user in mystore, buy product and take screenshot
 	  And Go to login page
 	  And Login user on <email> and <passwd>
 	  And Go to home page
+	  When Select <product>.
 	  Examples:
-		| browser | email | passwd |
-		| Firefox | yhffzfuiqdzpbilmep@kvhrr.com | zDOUWwpQj0 |
+		| browser | email | passwd | product |
+		| Firefox | yhffzfuiqdzpbilmep@kvhrr.com | zDOUWwpQj0 | Hummingbird Printed Sweater |
