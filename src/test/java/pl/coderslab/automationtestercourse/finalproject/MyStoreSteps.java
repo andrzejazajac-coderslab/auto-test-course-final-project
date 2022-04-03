@@ -19,6 +19,7 @@ public class MyStoreSteps {
     private MyStoreAccountPage msAccountPage;
     private MyStoreAddressPage msAddressPage;
     private MyStoreAddAddressPage msAddAddressPage;
+    private MyStoreHomePage msHomePage;
 
     private boolean isAnyAddress;
 
@@ -103,4 +104,10 @@ public class MyStoreSteps {
     }
 
 
+    @When("^Select (.*).$")
+    public void selectProduct(String productName) {
+        this.msHomePage = new MyStoreHomePage(driver);
+        msHomePage.goToArticlePage(productName);
+
+    }
 }
