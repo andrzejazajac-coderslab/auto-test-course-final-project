@@ -12,6 +12,7 @@ Feature: Login user in mystore, buy product and take screenshot
 	  And Click link "Proceed to checkout" in cart.
 	  And Confirm address.
 	  And Select shipping method.
+	  And Select payment.
 	  Examples:
 		| browser | email | passwd | product | size | quantity |
 		| Firefox | yhffzfuiqdzpbilmep@kvhrr.com | zDOUWwpQj0 | Hummingbird Printed Sweater | M| 5|
