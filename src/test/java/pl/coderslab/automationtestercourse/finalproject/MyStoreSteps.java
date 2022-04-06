@@ -112,9 +112,8 @@ public class MyStoreSteps {
 
     }
 
-    @And("^Select size.$")
-    public void selectSize(){
-        String sizeToSelect = "M";
+    @And("^Select size (.*).$")
+    public void selectSize(String sizeToSelect){
         this.msProductPage = new MyStoreProductPage(driver);
 
         msProductPage.setSize(sizeToSelect);
