@@ -16,6 +16,8 @@ public class MyStoreOrderPage extends PageObject{
     private List<WebElement> shippingMethods;
     @FindBy(name = "confirmDeliveryOption")
     private WebElement confirmDeliveryOption;
+    @FindBy(className = "payment-option")
+    private List<WebElement> paymentMethods;
 
     public MyStoreOrderPage(WebDriver driver) {
         super(driver);
@@ -44,5 +46,15 @@ public class MyStoreOrderPage extends PageObject{
 
     public void confirmDeliveryOptionClick() {
         confirmDeliveryOption.click();
+    }
+
+    public void setPaymentMethodClick(String method){
+        for(var paymentMethod : paymentMethods){
+            String methodName = paymentMethod.findElement(By.xpath("./label")).getText();
+            if(methodName.equalsIgnoreCase(method)){
+                paymentMethod.findElement(By.xpath("./span/input")).click();
+                break;
+            }
+        }
     }
 }

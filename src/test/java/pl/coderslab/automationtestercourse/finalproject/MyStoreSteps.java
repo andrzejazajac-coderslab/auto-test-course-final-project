@@ -158,4 +158,9 @@ public class MyStoreSteps {
         msOrderPage.setDeliveryOptionClick("PrestaShop");
         msOrderPage.confirmDeliveryOptionClick();
     }
+
+    @And("Select payment.")
+    public void selectPayment() {
+        msOrderPage.setPaymentMethodClick("Pay by Check");
+    }
 }
