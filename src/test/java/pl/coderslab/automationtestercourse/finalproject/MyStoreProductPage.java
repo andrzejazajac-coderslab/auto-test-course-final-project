@@ -16,6 +16,8 @@ public class MyStoreProductPage extends PageObject{
     private WebElement quantityInput;
     @FindBy(xpath = "//div[contains(@class, \"add\")]/button")
     private WebElement addToCartButton;
+    @FindBy(xpath = "//div[contains(@class, \"cart-content-btn\")]")
+    private WebElement proceedToCheckout;
 
     public MyStoreProductPage(WebDriver driver) {
         super(driver);
@@ -44,5 +46,9 @@ public class MyStoreProductPage extends PageObject{
 
     public void addToCartClick(){
         addToCartButton.click();
+    }
+
+    public void proceedToCheckoutClick(){
+        proceedToCheckout.click();
     }
 }

@@ -128,4 +128,13 @@ public class MyStoreSteps {
     public void addToCart() {
         msProductPage.addToCartClick();
     }
+
+    @And("Click link \"Proceed to checkout\".")
+    public void proceedToCheckoutClick() throws InterruptedException {
+        //TO DO:
+        //Hotfix to ElementNotInteractableException
+        Thread.sleep(Duration.ofSeconds(2).toMillis());
+        msProductPage.proceedToCheckoutClick();
+
+    }
 }
