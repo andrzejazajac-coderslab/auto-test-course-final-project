@@ -152,4 +152,10 @@ public class MyStoreSteps {
         this.msOrderPage = new MyStoreOrderPage(driver);
         msOrderPage.confirmAddressClick();
     }
+
+    @And("Select shipping method.")
+    public void selectShippingMethod() {
+        msOrderPage.setDeliveryOptionClick("PrestaShop");
+        msOrderPage.confirmDeliveryOptionClick();
+    }
 }
