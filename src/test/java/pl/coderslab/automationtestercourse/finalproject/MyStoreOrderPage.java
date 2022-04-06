@@ -18,6 +18,10 @@ public class MyStoreOrderPage extends PageObject{
     private WebElement confirmDeliveryOption;
     @FindBy(className = "payment-option")
     private List<WebElement> paymentMethods;
+    @FindBy(id="conditions_to_approve[terms-and-conditions]")
+    private WebElement conditionApproveCheckbox;
+    @FindBy(id= "payment-confirmation")
+    private WebElement paymentConfirmationButton;
 
     public MyStoreOrderPage(WebDriver driver) {
         super(driver);
@@ -56,5 +60,19 @@ public class MyStoreOrderPage extends PageObject{
                 break;
             }
         }
+    }
+
+    public void setConditionApproveCheckbox(boolean value)
+    {
+        /* TODO: check actual status*/
+        flipConditionApproveCheckbox();
+    }
+
+    private void flipConditionApproveCheckbox(){
+        conditionApproveCheckbox.click();
+    }
+
+    public void paymentConfirmationClick(){
+        paymentConfirmationButton.click();
     }
 }

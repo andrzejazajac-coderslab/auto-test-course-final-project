@@ -163,4 +163,10 @@ public class MyStoreSteps {
     public void selectPayment() {
         msOrderPage.setPaymentMethodClick("Pay by Check");
     }
+
+    @Then("Click \"Order with an obligation to pay\".")
+    public void OrderConfirmationClick() {
+        msOrderPage.setConditionApproveCheckbox(true);
+        msOrderPage.paymentConfirmationClick();
+    }
 }
