@@ -118,4 +118,9 @@ public class MyStoreSteps {
 
         msProductPage.setSize(sizeToSelect);
     }
+
+    @And("^Select quantity (.*).$")
+    public void selectQuantity(int quantity) {
+        msProductPage.setQuantity(quantity);
+    }
 }

@@ -12,6 +12,8 @@ public class MyStoreProductPage extends PageObject{
 
     @FindBy(id = "group_1")
     private WebElement sizeSelect;
+    @FindBy(id = "quantity_wanted")
+    private WebElement quantityInput;
 
     public MyStoreProductPage(WebDriver driver) {
         super(driver);
@@ -32,5 +34,9 @@ public class MyStoreProductPage extends PageObject{
             }
         }
 
+    }
+
+    public void setQuantity(int quantity){
+        TestHelper.SetText(quantityInput, String.valueOf(quantity));
     }
 }
