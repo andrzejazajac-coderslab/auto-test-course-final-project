@@ -6,6 +6,7 @@ Feature: Login user in mystore, buy product and take screenshot
 	  And Go to home page
 	  When Select product <product>.
 	  And Select size <size>.
+	  And Select quantity <quantity>.
 	  Examples:
-		| browser | email | passwd | product | size |
-		| Firefox | yhffzfuiqdzpbilmep@kvhrr.com | zDOUWwpQj0 | Hummingbird Printed Sweater | M|
+		| browser | email | passwd | product | size | quantity |
+		| Firefox | yhffzfuiqdzpbilmep@kvhrr.com | zDOUWwpQj0 | Hummingbird Printed Sweater | M| 5|
