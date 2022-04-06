@@ -13,6 +13,7 @@ Feature: Login user in mystore, buy product and take screenshot
 	  And Confirm address.
 	  And Select shipping method.
 	  And Select payment.
+	  And Click "Order with an obligation to pay".
 	  Examples:
 		| browser | email | passwd | product | size | quantity |
 		| Firefox | yhffzfuiqdzpbilmep@kvhrr.com | zDOUWwpQj0 | Hummingbird Printed Sweater | M| 5|
