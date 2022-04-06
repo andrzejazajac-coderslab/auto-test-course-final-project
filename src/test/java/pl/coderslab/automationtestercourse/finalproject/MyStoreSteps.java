@@ -1,10 +1,16 @@
 package pl.coderslab.automationtestercourse.finalproject;
 
 import io.cucumber.java.en.*;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.*;
 import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -168,5 +174,13 @@ public class MyStoreSteps {
     public void OrderConfirmationClick() {
         msOrderPage.setConditionApproveCheckbox(true);
         msOrderPage.paymentConfirmationClick();
+    }
+
+    @And("Take screenshot.")
+    public void saveScreenshot() throws IOException {
+        File tmpScreenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+
+        String currentDateTime = LocalDateTime.now().toString().replaceAll(":", "_");
+        Files.copy(tmpScreenshot.toPath(), Paths.get("./", "ss_order_confirmation-"+currentDateTime+".png"));
     }
 }
