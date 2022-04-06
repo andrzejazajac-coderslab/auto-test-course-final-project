@@ -20,6 +20,7 @@ public class MyStoreSteps {
     private MyStoreAddressPage msAddressPage;
     private MyStoreAddAddressPage msAddAddressPage;
     private MyStoreHomePage msHomePage;
+    private MyStoreProductPage msProductPage;
 
     private boolean isAnyAddress;
 
@@ -109,5 +110,13 @@ public class MyStoreSteps {
         this.msHomePage = new MyStoreHomePage(driver);
         msHomePage.goToArticlePage(productName);
 
+    }
+
+    @And("^Select size.$")
+    public void selectSize(){
+        String sizeToSelect = "M";
+        this.msProductPage = new MyStoreProductPage(driver);
+
+        msProductPage.setSize(sizeToSelect);
     }
 }
