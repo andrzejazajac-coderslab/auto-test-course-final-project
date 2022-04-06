@@ -9,6 +9,7 @@ Feature: Login user in mystore, buy product and take screenshot
 	  And Select quantity <quantity>.
 	  And Add to cart.
 	  And Click link "Proceed to checkout".
+	  And Click link "Proceed to checkout" in cart.
 	  Examples:
 		| browser | email | passwd | product | size | quantity |
 		| Firefox | yhffzfuiqdzpbilmep@kvhrr.com | zDOUWwpQj0 | Hummingbird Printed Sweater | M| 5|
