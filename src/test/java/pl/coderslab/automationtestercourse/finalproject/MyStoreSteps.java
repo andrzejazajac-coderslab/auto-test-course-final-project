@@ -104,7 +104,7 @@ public class MyStoreSteps {
     }
 
 
-    @When("^Select (.*).$")
+    @When("^Select product (.*).$")
     public void selectProduct(String productName) {
         this.msHomePage = new MyStoreHomePage(driver);
         msHomePage.goToArticlePage(productName);
