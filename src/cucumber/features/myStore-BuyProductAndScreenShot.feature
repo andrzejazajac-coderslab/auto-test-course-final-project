@@ -5,6 +5,7 @@ Feature: Login user in mystore, buy product and take screenshot
 	  And Login user on <email> and <passwd>
 	  And Go to home page
 	  When Select <product>.
+	  And Select size.
 	  Examples:
 		| browser | email | passwd | product |
 		| Firefox | yhffzfuiqdzpbilmep@kvhrr.com | zDOUWwpQj0 | Hummingbird Printed Sweater |
