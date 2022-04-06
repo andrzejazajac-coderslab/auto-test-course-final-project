@@ -14,6 +14,8 @@ public class MyStoreProductPage extends PageObject{
     private WebElement sizeSelect;
     @FindBy(id = "quantity_wanted")
     private WebElement quantityInput;
+    @FindBy(xpath = "//div[contains(@class, \"add\")]/button")
+    private WebElement addToCartButton;
 
     public MyStoreProductPage(WebDriver driver) {
         super(driver);
@@ -38,5 +40,9 @@ public class MyStoreProductPage extends PageObject{
 
     public void setQuantity(int quantity){
         TestHelper.SetText(quantityInput, String.valueOf(quantity));
+    }
+
+    public void addToCartClick(){
+        addToCartButton.click();
     }
 }

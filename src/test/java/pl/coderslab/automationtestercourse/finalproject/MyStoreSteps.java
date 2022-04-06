@@ -123,4 +123,9 @@ public class MyStoreSteps {
     public void selectQuantity(int quantity) {
         msProductPage.setQuantity(quantity);
     }
+
+    @And("Add to cart.")
+    public void addToCart() {
+        msProductPage.addToCartClick();
+    }
 }
