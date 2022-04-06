@@ -21,6 +21,7 @@ public class MyStoreSteps {
     private MyStoreAddAddressPage msAddAddressPage;
     private MyStoreHomePage msHomePage;
     private MyStoreProductPage msProductPage;
+    private MyStoreCartPage msCartPage;
 
     private boolean isAnyAddress;
 
@@ -136,5 +137,12 @@ public class MyStoreSteps {
         Thread.sleep(Duration.ofSeconds(2).toMillis());
         msProductPage.proceedToCheckoutClick();
 
+    }
+
+    @And("Click link \"Proceed to checkout\" in cart.")
+    public void proceedToCheckoutCartClick() {
+        this.msCartPage = new MyStoreCartPage(driver);
+
+        msCartPage.proceedToCheckoutClick();
     }
 }
