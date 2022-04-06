@@ -22,6 +22,7 @@ public class MyStoreSteps {
     private MyStoreHomePage msHomePage;
     private MyStoreProductPage msProductPage;
     private MyStoreCartPage msCartPage;
+    private MyStoreOrderPage msOrderPage;
 
     private boolean isAnyAddress;
 
@@ -144,5 +145,11 @@ public class MyStoreSteps {
         this.msCartPage = new MyStoreCartPage(driver);
 
         msCartPage.proceedToCheckoutClick();
+    }
+
+    @And("Confirm address.")
+    public void confirmAddress() {
+        this.msOrderPage = new MyStoreOrderPage(driver);
+        msOrderPage.confirmAddressClick();
     }
 }
